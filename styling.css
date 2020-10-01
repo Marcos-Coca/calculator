@@ -1,0 +1,36 @@
+.Normal {
+    width: 20%;
+    height: 18%;
+    border: solid rgb(117, 0, 0);
+    border-radius: 8%;
+    border-width: 3px;
+    margin-left: 2.6%;
+    margin-top: 1.75%;
+    font-size: 1cm;
+    background-color: blueviolet;
+}
+
+.glowing {
+    width: 20%;
+    height: 18%;
+    border: solid rgb(0, 0, 0);
+    border-radius: 8%;
+    border-width: 3px;
+    margin-left: 2.6%;
+    margin-top: 1.75%;
+    font-size: 1cm;
+    background-color: blue;
+}
+
+.clicked {
+    width: 20%;
+    height: 18%;
+    border: solid black;
+    border-radius: 8%;
+    border-width: 3px;
+    margin-left: 2.6%;
+    margin-top: 1.75%;
+    font-size: 1cm;
+    /* background-color: blue; */
+    background-color: red;
+}
