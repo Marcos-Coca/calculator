@@ -1,5 +1,40 @@
+var keys = document.getElementsByClassName('Normal');
+
+Array.from(keys).forEach(key => {
+    key.addEventListener('click',function(event){
+        var key = event.target;
+        enternum(key)
+    })    
+});
+
+function enternum(key) {
+    var value = key.value
+    switch (value) {
+        case "/":
+            return operate("div",key);
+            
+        case "*":
+            return operate("mul",key);
+            
+        case "=": 
+        case "Enter":
+            return ans(key);
+            
+        case "+":
+            return operate("add",key);
+            
+        case "-":
+            return operate("sub",key);
+            
+        case "Backspace":
+            return Backspace();
+
+        default: 
+            return numb(value,key)
+    }
+}
+
 function numb(k, ele) {
-    console.log("dsafadfadfad",k,ele)
     if (!(document.getElementById("main").innerHTML.includes(".") && k == ".")) {
         if (!input1) {
             document.getElementById("main").innerHTML += k;
@@ -70,26 +105,26 @@ function ans(ele) {
         case "add":
             document.getElementById("main").innerHTML = parseFloat(input1) + parseFloat(input2);
             input1 = document.getElementById("main").innerHTML;
-            input2 = "";
-            break;
+            return input2 = "";
+            
         case "sub":
             document.getElementById("main").innerHTML = input1 - input2;
             input1 = document.getElementById("main").innerHTML;
-            input2 = "";
-            break;
+            return input2 = "";
+            
         case "div":
             document.getElementById("main").innerHTML = input1 / input2;
             input1 = document.getElementById("main").innerHTML;
-            input2 = "";
-            break;
+            return input2 = "";
+            
         case "mul":
             document.getElementById("main").innerHTML = input1 * input2;
             input1 = document.getElementById("main").innerHTML;
-            input2 = "";
-            break;
+            return input2 = "";
+            
         default:
-            console.log("no operation selected!");
-            break;
+            return console.log("no operation selected!");
+            
     }
 }
 
@@ -97,70 +132,7 @@ function Backspace() {
     document.getElementById("main").innerHTML = document.getElementById("main").innerHTML.slice(0, -1);
 }
 
-function enternum(event) {
-    console.log(event.key);
-    switch (event.key) {
-        case "1":
-            numb(1);
-            break;
-        case "2":
-            numb(2);
-            break;
-        case "3":
-            numb(3);
-            break;
-        case "4":
-            numb(4);
-            break;
-        case "5":
-            numb(5);
-            break;
-        case "6":
-            numb(6);
-            break;
-        case "7":
-            numb(7);
-            break;
-        case "8":
-            numb(8);
-            break;
-        case "9":
-            numb(9);
-            break;
-        case "0":
-            numb(0);
-            break;
-        case "/":
-            operate("div");
-            break;
-        case "*":
-            operate("mul");
-            break;
-        case ".":
-            numb(".");
-            break;
-        case "=", "Enter":
-            ans("ans");
-            break;
-        case "+":
-            operate("add");
-            break;
-        case "-":
-            operate("sub");
-            break;
-        case "Backspace":
-            Backspace();
-            break;
-    }
-}
 
-function glow(ele) {
-    // ele.className = "glowing";
-}
-
-function revGlow(ele) {
-    // ele.className = "Normal";
-}
 
 var numClicked
 
@@ -173,5 +145,5 @@ function clickstart(ele) {
 
 function clickstop() {
     console.log("click stoped");
-    numClicked.className = "glowing";
+    numClicked.className = "Normal";
 }
