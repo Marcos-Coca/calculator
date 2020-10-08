@@ -1,4 +1,5 @@
 function numb(k, ele) {
+    console.log("dsafadfadfad",k,ele)
     if (!(document.getElementById("main").innerHTML.includes(".") && k == ".")) {
         if (!input1) {
             document.getElementById("main").innerHTML += k;
@@ -154,11 +155,11 @@ function enternum(event) {
 }
 
 function glow(ele) {
-    ele.className = "glowing";
+    // ele.className = "glowing";
 }
 
 function revGlow(ele) {
-    ele.className = "Normal";
+    // ele.className = "Normal";
 }
 
 var numClicked
